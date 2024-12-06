@@ -12,8 +12,11 @@ typedef struct {
     int lastUsed;
 } PageFrame;
 
+float hitRatio(int hitNum, int reference);
+float hitFault(int faultNum, int reference);
+
 int main() {
-    int i, j, n, no, refStr[50], fcount = 0, time = 0;
+    int i, j, n, no, refStr[50], fcount = 0, hitCount = 0, time = 0;
 
     printf("\nENTER THE NUMBER OF PAGES:\n");
     scanf("%d", &n);
@@ -27,7 +30,7 @@ int main() {
     scanf("%d", &no);
 
     PageFrame frames[no];
-
+    
     for (i = 0; i < no; i++) {
         frames[i].pageNumber = -1;
         frames[i].lastUsed = -1;
@@ -42,22 +45,22 @@ int main() {
         for (j = 0; j < no; j++) {
             if (frames[j].pageNumber == refStr[i]) {
                 avail = 1;
-                frames[j].lastUsed = time++; 
+                frames[j].lastUsed = time++;
+                hitCount++;              
                 break;
             }
         }
 
         if (avail == 1) {
-     
             for (j = 0; j < no; j++) {
                 if (frames[j].pageNumber != -1)
                     printf("%d\t", frames[j].pageNumber);
                 else
                     printf("-\t");
             }
-            printf("H\n"); 
+            printf("H\n");
         } else {
-
+    
             int lruIndex = 0;
             int minTime = frames[0].lastUsed;
 
@@ -70,7 +73,7 @@ int main() {
 
             frames[lruIndex].pageNumber = refStr[i];
             frames[lruIndex].lastUsed = time++;
-            fcount++;
+            fcount++; // Increment fault count
 
             for (j = 0; j < no; j++) {
                 if (frames[j].pageNumber != -1)
@@ -83,6 +86,15 @@ int main() {
     }
 
     printf("\nTotal Page Faults: %d\n", fcount);
-
+    printf("Hit Ratio: %.2f%%\n", hitRatio(hitCount, n));
+    printf("Fault Ratio: %.2f%%\n", hitFault(fcount, n));
     return 0;
+}
+
+float hitRatio(int hitNum, int reference) {
+    return ((float) hitNum / reference) * 100;
+}
+
+float hitFault(int faultNum, int reference) {
+    return ((float) faultNum / reference) * 100;
 }
