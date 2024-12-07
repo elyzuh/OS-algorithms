@@ -1,6 +1,6 @@
 /****************************************************************************************
 *   Name:           Katrina Elyza Ventura & Fabiola Villanueva                          *
-*   Description:    First Come, First Serve - CPU Scheduling Algorithm                  *
+*   Description:    First Come, First Serve - CPU Scheduling Algorithm (NON-P)          *
 *                   Minheap Set of Given Processes then Enqueue to be Executed          *
 *   Date:           11 / 08 / 24                                                        *
 ****************************************************************************************/
@@ -115,7 +115,7 @@ void enqueueProcess (heapType *H, execQueueList *QLL) {
             currentTime += newProcess->data.burstT;                                                                 // increment the current time with burst time
             newProcess->data.completionT = currentTime;                                                             // new current time shall be the completion time of the process
 
-            printf("\n...enqueueing process %c", newProcess->data.id);
+            printf("\n...executing process %c", newProcess->data.id);
 
             if (QLL->front != NULL) {                                                                               // enqueue the new process to be executed
                 QLL->rear->link = newProcess;
