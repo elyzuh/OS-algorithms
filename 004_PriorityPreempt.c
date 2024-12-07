@@ -1,3 +1,10 @@
+/****************************************************************************************
+*   Name:           Katrina Elyza Ventura & Fabiola Villanueva                          *
+*   Description:    Priority Preemptive - CPU Scheduling Algorithm                      *
+*                                                                                       *
+*   Date:           12 / 07 / 24                                                        *
+****************************************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
