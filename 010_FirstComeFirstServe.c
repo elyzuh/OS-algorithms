@@ -14,6 +14,7 @@
 void fcfsScheduling(int requests[], int n, int head);
 
 int main() {
+    system("CLS");
     int n, head;
 
     // input the number of I/O requests

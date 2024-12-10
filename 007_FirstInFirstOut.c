@@ -9,6 +9,7 @@ float hitFault(int faultNum, int reference);
 void firstInFirstOut(int refStr[], int n, int no);
 
 int main() {
+    system("CLS");
     int n, no, refStr[50];
 
     printf("\nENTER THE NUMBER OF PAGES:\n");
