@@ -38,6 +38,7 @@ void displayResults(Process processes[], int processCount);
 void freePriorityQueue(PriorityQueue *pq);
 
 int main() {
+    system("CLS");
     int processCount = 5;
 
     Process processes[] = {

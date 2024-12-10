@@ -5,8 +5,8 @@
 *   Date:           11 / 08 / 24                                                        *
 ****************************************************************************************/
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct {
     char processID;
@@ -23,6 +23,7 @@ void calculateTimes(Process processes[], int processCount);
 void displayResults(Process processes[], int processCount);
 
 int main() {
+    system("CLS");
     int processCount;
 
     printf("Enter Process Count: ");

@@ -23,7 +23,7 @@ void roundRobinScheduling(Process processes[], int processCount, int timeQuantum
 void displayResults(Process processes[], int processCount);
 
 int main() {
-    system("cls");
+    system("CLS");
     int processCount = 5;
     int timeQuantum = 4;
 

@@ -6,6 +6,7 @@
 ****************************************************************************************/
 
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct {
     int pageNumber;
@@ -17,6 +18,7 @@ float hitFault(int faultNum, int reference);
 void leastRecentlyUsed(int refStr[], int n, int no);
 
 int main() {
+    system("CLS");
     int n, no, refStr[50];
 
     printf("\nENTER THE NUMBER OF PAGES:\n");

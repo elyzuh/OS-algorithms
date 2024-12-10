@@ -23,6 +23,7 @@ void calculateSRTF(Process processes[], int processCount);
 void displayResults(Process processes[], int processCount);
 
 int main() {
+    system("CLS");
     int processCount;
 
     printf("Enter number of Processes: ");
