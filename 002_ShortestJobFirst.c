@@ -9,17 +9,17 @@
 #include <stdio.h>
 
 typedef struct {
-    char processID;
-    int arrivalTime;
-    int burstTime;
-    int completionTime;
-    int turnaroundTime;
-    int waitingTime;
+    char processID;       // Identifier for the process
+    int arrivalTime;      // Time at which the process arrives
+    int burstTime;        // CPU burst time needed for the process
+    int completionTime;   // Time when the process is completed
+    int turnaroundTime;   // Total time taken from arrival to completion
+    int waitingTime;      // Time the process spends waiting in the ready queue
 } Process;
 
-void inputProcesses(Process processes[], int *processCount);
-void calculateTimes(Process processes[], int processCount);
-void displayResults(Process processes[], int processCount);
+void inputProcesses(Process processes[], int *processCount); // inputs process details from the user
+void calculateTimes(Process processes[], int processCount);  // calculates the scheduling metrics
+void displayResults(Process processes[], int processCount);  // displays the final results
 
 int main() {
     int processCount;
@@ -50,25 +50,27 @@ void inputProcesses(Process processes[], int *processCount) {
 }
 
 void calculateTimes(Process processes[], int processCount) {
-    int currentTime = 0;
-    int completed = 0;
-    int isCompleted[processCount];
+    int currentTime = 0;    // curr time
+    int completed = 0;      // # of processes completed
+    int isCompleted[processCount]; //array to track if a process is completed
+
+    //initialize all processes as not completed
     for (int i = 0; i < processCount; i++) {
         isCompleted[i] = 0;
     }
 
     while (completed != processCount) {
-        int idx = -1;
+        int idx = -1;       
         int shortestBurst = 9999;
 
-        // Find the process with the shortest burst time that has arrived and is not completed
+        // find the process with the shortest burst time that has arrived and is not completed
         for (int i = 0; i < processCount; i++) {
             if (processes[i].arrivalTime <= currentTime && !isCompleted[i]) {
                 if (processes[i].burstTime < shortestBurst) {
                     shortestBurst = processes[i].burstTime;
                     idx = i;
                 } else if (processes[i].burstTime == shortestBurst) {
-                    // If burst times are the same, choose the process with earlier arrival time
+                    // choose process with earlier arrival time
                     if (processes[i].arrivalTime < processes[idx].arrivalTime) {
                         idx = i;
                     }
@@ -76,15 +78,21 @@ void calculateTimes(Process processes[], int processCount) {
             }
         }
 
+        // if a valid process is found, execute it
         if (idx != -1) {
+            // calculate completion time for the selected process
             processes[idx].completionTime = currentTime + processes[idx].burstTime;
+
+            // calculate turnaround time and waiting time
             processes[idx].turnaroundTime = processes[idx].completionTime - processes[idx].arrivalTime;
             processes[idx].waitingTime = processes[idx].turnaroundTime - processes[idx].burstTime;
 
+            //update current time and mark the process as completed
             currentTime = processes[idx].completionTime;
             isCompleted[idx] = 1;
-            completed++;
+            completed++; //increment the count of completed processes
         } else {
+            // if no process is ready, increment the current time
             currentTime++;
         }
     }
@@ -92,7 +100,8 @@ void calculateTimes(Process processes[], int processCount) {
 
 void displayResults(Process processes[], int processCount) {
     int totalTurnaroundTime = 0;
-    int totalWaitingTime = 0;
+    int totalWaitingTime = 0;  
+
 
     printf("\nPROCESS ID\tArrival Time\tCPU Burst Time\tCompletion Time\tTurnaround Time\tWaiting Time\n");
     for (int i = 0; i < processCount; i++) {
@@ -103,7 +112,6 @@ void displayResults(Process processes[], int processCount) {
                processes[i].completionTime, 
                processes[i].turnaroundTime, 
                processes[i].waitingTime);
-
         totalTurnaroundTime += processes[i].turnaroundTime;
         totalWaitingTime += processes[i].waitingTime;
     }

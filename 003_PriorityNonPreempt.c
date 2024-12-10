@@ -65,7 +65,7 @@ void calculateTimes(Process processes[], int processCount) {
         int idx = -1;
         int highestPriority = 9999;
 
-        // find process with ihghest priority
+        // find the process with the highest priority (lowest priority value) that has arrived and is not completed
         for (int i = 0; i < processCount; i++) {
             if (processes[i].arrivalTime <= currentTime && !isCompleted[i]) {
                 if (processes[i].priority < highestPriority) {
@@ -79,7 +79,7 @@ void calculateTimes(Process processes[], int processCount) {
                 }
             }
         }
-
+        // if a valid process is found, execute it
         if (idx != -1) {
             processes[idx].completionTime = currentTime + processes[idx].burstTime;
             processes[idx].turnaroundTime = processes[idx].completionTime - processes[idx].arrivalTime;

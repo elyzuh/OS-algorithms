@@ -48,7 +48,7 @@ void inputProcesses(Process processes[], int *processCount) {
         printf("Enter Burst Time for %c: ", processes[i].processID);
         scanf("%d", &processes[i].burstTime);
 
-        processes[i].remainingTime = processes[i].burstTime; // Initialize remaining time
+        processes[i].remainingTime = processes[i].burstTime; // initialize remaining time
     }
 }
 
@@ -59,7 +59,7 @@ void calculateSRTF(Process processes[], int processCount) {
     while (completed != processCount) {
         int smallest = -1;
 
-        // Find process with shortest remaining time that has arrived
+        // find process with shortest remaining time that has arrived
         for (int i = 0; i < processCount; i++) {
             if (processes[i].arrivalTime <= currentTime && processes[i].remainingTime > 0) {
                 if (smallest == -1 || processes[i].remainingTime < processes[smallest].remainingTime) {
@@ -69,15 +69,15 @@ void calculateSRTF(Process processes[], int processCount) {
         }
 
         if (smallest == -1) {
-            currentTime++; // No process is ready; increment time
+            currentTime++; // no process is ready; increment time
             continue;
         }
 
-        // Process the selected task for 1 unit of time
+        // process the selected task for 1 unit of time
         processes[smallest].remainingTime--;
         currentTime++;
 
-        // If the process finishes
+        // if the process finishes
         if (processes[smallest].remainingTime == 0) {
             completed++;
             processes[smallest].completionTime = currentTime;
