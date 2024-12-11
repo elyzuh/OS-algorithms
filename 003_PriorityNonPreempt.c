@@ -1,7 +1,6 @@
 /****************************************************************************************
 *   Name:           Katrina Elyza Ventura & Fabiola Villanueva                          *
 *   Description:    Priority Non-Preemptive - CPU Scheduling Algorithm                  *
-*                                                                                       *
 *   Date:           11 / 08 / 24                                                        *
 ****************************************************************************************/
 

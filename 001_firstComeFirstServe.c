@@ -1,7 +1,6 @@
 /****************************************************************************************
 *   Name:           Katrina Elyza Ventura & Fabiola Villanueva                          *
 *   Description:    First Come, First Serve - CPU Scheduling Algorithm (NON-P)          *
-*                   Minheap Set of Given Processes then Enqueue to be Executed          *
 *   Date:           11 / 08 / 24                                                        *
 ****************************************************************************************/
 

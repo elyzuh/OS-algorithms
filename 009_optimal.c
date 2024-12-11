@@ -1,8 +1,7 @@
 /****************************************************************************************
 *   Name:           Katrina Elyza Ventura & Fabiola Villanueva                          *
 *   Description:    Optimal Page Replacement Algorithm                                  *
-*                                                                                       *
-*   Date:           12 / 03 / 24                                                        *
+*   Date:           12 / 10 / 24                                                        *
 ****************************************************************************************/
 
 #include <stdio.h>

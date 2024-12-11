@@ -1,3 +1,9 @@
+/****************************************************************************************
+*   Name:           Katrina Elyza Ventura & Fabiola Villanueva                          *
+*   Description:    First In First Out - Page Replacement Algorithm                     *
+*   Date:           12 / 3 / 24                                                         *
+****************************************************************************************/
+
 #include <stdio.h>
 
 typedef struct {

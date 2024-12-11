@@ -1,8 +1,7 @@
 /****************************************************************************************
 *   Name:           Katrina Elyza Ventura & Fabiola Villanueva                          *
 *   Description:    First Come First Serve - IO Management Algorithm                    *
-*                                                                                       *
-*   Date:           12 / 3 / 24                                                         *
+*   Date:           12 / 03 / 24                                                        *
 ****************************************************************************************/
 
 #include <stdio.h>

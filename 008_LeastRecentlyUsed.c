@@ -1,7 +1,6 @@
 /****************************************************************************************
 *   Name:           Katrina Elyza Ventura & Fabiola Villanueva                          *
 *   Description:    Least Recently Used - Page Replacement Algorithm                    *
-*                                                                                       *
 *   Date:           12 / 3 / 24                                                         *
 ****************************************************************************************/
 

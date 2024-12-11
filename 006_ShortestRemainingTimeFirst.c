@@ -1,7 +1,6 @@
 /****************************************************************************************
 *   Name:           Katrina Elyza Ventura & Fabiola Villanueva                          *
 *   Description:    Shortest Remaining Time First - CPU Scheduling Algorithm            *
-*                                                                                       *
 *   Date:           11 / 25 / 24                                                        *
 ****************************************************************************************/
 
