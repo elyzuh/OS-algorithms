@@ -21,10 +21,10 @@ void sortRequests(int arr[], int size);
 int main(void) {
     system("CLS");
     Disk disk = {
-        .initialPosition = 256, // Initial head position
-        .requestQueue = {46, 56, 276, 48, 236, 338, 112}, // Requests
+        .initialPosition = 55, // Initial head position
+        .requestQueue = {93, 176, 42, 148, 27, 14, 180}, // Requests
         .size = 7, // Number of requests
-        .diskSize = 400 // Maximum disk size (tracks go from 0 to 399)
+        .diskSize = 200 // Maximum disk size (tracks go from 0 to 399)
     };
 
     processRequestsCSCAN(&disk);
