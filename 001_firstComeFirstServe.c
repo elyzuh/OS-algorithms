@@ -1,7 +1,6 @@
 /****************************************************************************************
 *   Name:           Katrina Elyza Ventura & Fabiola Villanueva                          *
 *   Description:    First Come, First Serve - CPU Scheduling Algorithm (NON-P)          *
-*                   Minheap Set of Given Processes then Enqueue to be Executed          *
 *   Date:           11 / 08 / 24                                                        *
 ****************************************************************************************/
 
@@ -51,11 +50,11 @@ void main () {
     int x;
 
     processType arr[5] = {                                                                                              // sample static data
-        {'A', 0, 10, 0, 0, 0},
-        {'B', 2,  5, 0, 0, 0},
-        {'C', 3,  2, 0, 0, 0},
-        {'D', 5, 20, 0, 0, 0},
-        {'E', 8, 10, 0, 0, 0}
+        {'A', 3,  4, 0, 0, 0},
+        {'B', 5,  9, 0, 0, 0},
+        {'C', 8,  4, 0, 0, 0},
+        {'D', 0,  7, 0, 0, 0},
+        {'E', 12, 6, 0, 0, 0}
     };
 
     for ( x = 0; x < 5; ++x) {
